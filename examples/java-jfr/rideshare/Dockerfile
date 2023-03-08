@@ -29,5 +29,5 @@ ENV PYROSCOPE_SERVER_ADDRESS=http://localhost:4040
 
 # CMD ["java", "-javaagent:pyroscope.jar", "-jar", "./build/libs/rideshare-1.0-SNAPSHOT.jar"]
 CMD ["java", \
-	"-agentpath:/opt/cprof/profiler_java_agent.so=-cprof_service=rideshare,-cprof_service_version=1.0.0", \
+	"-agentpath:/opt/cprof/profiler_java_agent.so=-cprof_service=rideshare,-cprof_service_version=2.0.0,-cprof_enable_heap_sampling=true,-logtostderr", \
 	"-jar", "./build/libs/rideshare-1.0-SNAPSHOT.jar"]
