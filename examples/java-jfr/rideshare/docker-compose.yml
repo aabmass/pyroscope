@@ -5,7 +5,7 @@ services:
       - 8080
     environment:
       - REGION=us-east
-      - PYROSCOPE_SERVER_ADDRESS=http://pyroscope:4040
+      - PYROSCOPE_SERVER_ADDRESS=http://10.128.0.2:4040
     build:
       context: .
 
@@ -14,7 +14,7 @@ services:
       - 8080
     environment:
       - REGION=eu-north
-      - PYROSCOPE_SERVER_ADDRESS=http://pyroscope:4040
+      - PYROSCOPE_SERVER_ADDRESS=http://10.128.0.2:4040
     build:
       context: .
 
@@ -23,19 +23,19 @@ services:
       - 8080
     environment:
       - REGION=ap-south
-      - PYROSCOPE_SERVER_ADDRESS=http://pyroscope:4040
+      - PYROSCOPE_SERVER_ADDRESS=http://10.128.0.2:4040
     build:
       context: .
 
-  pyroscope:
-    image: pyroscope/pyroscope:latest
-    environment:
-      - PYROSCOPE_LOG_LEVEL=debug
-    ports:
-      - '4040:4040'
-    command:
-      - 'server'
-      - '-no-self-profiling'
+  # pyroscope:
+  #   image: pyroscope/pyroscope:latest
+  #   environment:
+  #     - PYROSCOPE_LOG_LEVEL=debug
+  #   ports:
+  #     - '4040:4040'
+  #   command:
+  #     - 'server'
+  #     - '-no-self-profiling'
 
   load-generator:
     build:
