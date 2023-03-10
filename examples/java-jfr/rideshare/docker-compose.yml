@@ -8,6 +8,7 @@ services:
       - PYROSCOPE_SERVER_ADDRESS=http://10.128.0.2:4040
     build:
       context: .
+    image: gcr.io/otel-starter-project/pyroscope-rideshare-demo
 
   eu-north:
     ports:
@@ -41,3 +42,4 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.load-generator
+    image: gcr.io/otel-starter-project/pyroscope-rideshare-loadgen
