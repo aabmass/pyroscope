@@ -2,7 +2,7 @@
 import express from 'express';
 import morgan from 'morgan';
 
-import Pyroscope from '@pyroscope/nodejs';
+// import Pyroscope from '@pyroscope/nodejs';
 
 const port = process.env['PORT'] || 3000;
 
@@ -34,13 +34,13 @@ app.get('/scooter', function scooterSearchHandler(req, res) {
   return genericSearchHandler(0.5)(req, res);
 });
 
-Pyroscope.init({
-  appName: 'nodejs',
-  serverAddress: 'http://pyroscope:4040',
-  sourceMapPath: ['.'],
-});
-Pyroscope.startHeapProfiling();
-Pyroscope.startCpuProfiling();
+// Pyroscope.init({
+//   appName: 'nodejs',
+//   serverAddress: 'http://pyroscope:4040',
+//   sourceMapPath: ['.'],
+// });
+// Pyroscope.startHeapProfiling();
+// Pyroscope.startCpuProfiling();
 
 app.listen(port, () => {
   console.log(
