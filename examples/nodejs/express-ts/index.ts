@@ -35,11 +35,10 @@ app.get('/scooter', function scooterSearchHandler(req, res) {
 });
 
 Pyroscope.init({
-  appName: 'nodejs',
+  appName: 'express-ts',
   serverAddress: 'http://10.128.0.2:4040',
   sourceMapPath: ['.'],
   tags: {
-    "service": "express-ts",
     "version": "1.0.0",
   }
 });
