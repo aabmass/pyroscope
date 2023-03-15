@@ -10,6 +10,7 @@ import pyroscope
 pyroscope.configure(
     application_name = "fastapi-rideshare",
     server_address   = "http://10.128.0.2:4040",
+    oncpu=False,
     tags = {
         "version": "1.1.0",
     },
