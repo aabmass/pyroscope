@@ -1,6 +1,7 @@
 /* eslint-disable */
 import express from 'express';
 import morgan from 'morgan';
+import * as CloudProfiler from '@google-cloud/profiler';
 
 // import Pyroscope from '@pyroscope/nodejs';
 
@@ -41,6 +42,12 @@ app.get('/scooter', function scooterSearchHandler(req, res) {
 // });
 // Pyroscope.startHeapProfiling();
 // Pyroscope.startCpuProfiling();
+CloudProfiler.start({
+  serviceContext: {
+    service: 'express-ts',
+    version: '1.0.0',
+  },
+});
 
 app.listen(port, () => {
   console.log(
